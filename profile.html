@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Zhicong Hong · CV</title>
+  <meta name="description" content="Two-column resume-style personal homepage." />
+  <style>
+    /* =========================
+       Black & Gold (Minimal)
+       ========================= */
+    :root{
+      /* Light (paper + gold) */
+      --bg:#fbfaf7;
+      --text:#111827;
+      --muted:#6b7280;
+      --line:#e7e3da;
+      --card:#ffffff;
+      --chip:#f4f1ea;
+      --shadow: 0 1px 0 rgba(17,24,39,.06);
+
+      /* Accent (gold) */
+      --gold:#b08d57;
+      --gold2:#d6b06e;
+    }
+    @media (prefers-color-scheme: dark){
+      :root{
+        /* Dark (black + gold) */
+        --bg:#07080b;
+        --text:#f3f4f6;
+        --muted:#b7b0a6;
+        --line:#23201c;
+        --card:#0c0d12;
+        --chip:#12131a;
+        --shadow: 0 1px 0 rgba(255,255,255,.04);
+
+        /* Accent (gold) */
+        --gold:#c7a46b;
+        --gold2:#e2c27c;
+      }
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font: 15px/1.6 ui-rounded, "SF Pro Rounded", "Segoe UI Rounded", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      letter-spacing:.1px;
+    }
+
+    /* Links (gold accent) */
+    a{color:var(--gold); text-decoration:none; border-bottom:1px solid transparent}
+    a:hover{border-bottom-color:var(--gold2)}
+
+    .wrap{max-width:1060px; margin:0 auto; padding:44px 20px 70px}
+    .layout{
+      display:grid;
+      grid-template-columns: 300px 1fr; /* 左窄右宽 */
+      gap:18px;
+      align-items:start;
+    }
+    @media (max-width: 920px){
+      .layout{grid-template-columns:1fr}
+    }
+    .panel{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:16px;
+      box-shadow:var(--shadow);
+    }
+    .left{position:sticky; top:18px; padding:18px}
+    @media (max-width: 920px){ .left{position:static} }
+    .right{padding:18px}
+
+    /* Left column */
+    .avatar{
+      width:140px; height:140px;
+      border-radius:0;
+      border:0;
+      object-fit:contain;
+      background:transparent;
+      box-shadow:none;
+    }
+    .name{margin:14px 0 6px; font-size:26px; line-height:1.2}
+    .sub{margin:0; color:var(--muted)}
+    .mini{
+      margin-top:12px;
+      padding-top:12px;
+      border-top:1px solid var(--line);
+    }
+    .secTitle{
+      font-size:12px;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:var(--muted);
+      margin:0 0 10px;
+    }
+    .kv{display:grid; gap:8px}
+    .kv div{display:flex; gap:10px; align-items:baseline; min-width:0}
+    .k{width:64px; color:var(--muted); font-size:12px; flex:0 0 auto}
+    .v{min-width:0; overflow:hidden; text-overflow:ellipsis; color:var(--text)}
+    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}
+    .chips{display:flex; gap:8px; flex-wrap:wrap}
+    .chip{
+      font-size:12px;
+      padding:4px 10px;
+      border-radius:999px;
+      background:var(--chip);
+      border:1px solid color-mix(in srgb, var(--gold) 25%, var(--line));
+      color:var(--muted);
+    }
+
+    /* Right column */
+    .headerRow{
+      display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
+      padding-bottom:14px;
+      border-bottom:1px solid var(--line);
+      margin-bottom:16px;
+    }
+    .titleBlock h1{margin:0; font-size:24px}
+    .titleBlock p{margin:6px 0 0; color:var(--muted)}
+    .btns{display:flex; gap:10px; flex-wrap:wrap; align-items:flex-start}
+    .btn{
+      display:inline-flex; align-items:center; gap:8px;
+      font-size:13px;
+      padding:8px 12px;
+      border-radius:12px;
+      background:var(--card);
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      color:var(--text);
+      white-space:nowrap;
+    }
+    .btn:hover{
+      transform:translateY(-1px);
+      border-color:var(--gold);
+    }
+
+    .section{margin-top:18px}
+    .section h2{
+      margin:0 0 10px;
+      font-size:12px;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:var(--muted);
+    }
+    .item{
+      padding:12px 14px;
+      border:1px solid var(--line);
+      border-radius:14px;
+      background:var(--bg);
+      box-shadow:var(--shadow);
+      margin-bottom:12px;
+    }
+    .item:last-child{margin-bottom:0}
+    .row{
+      display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
+      align-items:baseline;
+    }
+    .roleTitle{margin:0; font-weight:750; color:var(--text)}
+    .meta{color:var(--muted); font-size:13px; white-space:nowrap}
+    .desc{margin:4px 0 0; color:var(--muted)}
+    ul{margin:10px 0 0; padding-left:18px}
+    li{margin:4px 0}
+    .twoColGrid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+    }
+    @media (max-width: 920px){ .twoColGrid{grid-template-columns:1fr} }
+
+    /* Print-friendly */
+    @media print{
+      :root{ --bg:#fff; --text:#000; --muted:#333; --line:#ddd; --chip:#f3f3f3; --card:#fff; --shadow:none; --gold:#000; --gold2:#000; }
+      body{background:#fff}
+      .wrap{padding:18px}
+      .left{position:static}
+      .btn{display:none}
+      a{border-bottom:0; color:#000}
+      .item{break-inside:avoid}
+    }
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+    <div class="layout">
+
+      <!-- LEFT (narrow) -->
+      <aside class="panel left">
+        <!-- 头像：放到 assets/avatar.jpg 或改成在线链接 -->
+        <img class="avatar" src="photo.jpg" alt="avatar" />
+
+        <h1 class="name">Zhicong HONG</h1>
+        <!-- <p class="sub">洪智聪</p> -->
+        <!-- <p class="sub">B.Eng. ECE @ SJTU (2026) · PhD student @ PolyU (Computing, 2026 Fall)</p> -->
+
+        <div class="mini">
+          <p class="secTitle">Contact</p>
+          <div class="kv">
+            <div><span class="k">Email</span><span class="v mono"><a href="mailto:arrow23@sjtu.edu.cn">arrow23@sjtu.edu.cn</a></span></div>
+            <div><span class="k">GitHub</span><span class="v mono"><a href="https://github.com/shakinJelly" target="_blank" rel="noreferrer">github.com/shakinJelly</a></span></div>
+            <!-- <div><span class="k">Scholar</span><span class="v mono"><a href="https://scholar.google.com/" target="_blank" rel="noreferrer">Google Scholar</a></span></div>
+            <div><span class="k">CV</span><span class="v mono"><a href="assets/CV.pdf" target="_blank" rel="noreferrer">assets/CV.pdf</a></span></div> -->
+            <div><span class="k">Location</span><span class="v">Shanghai / Hong Kong</span></div>
+          </div>
+        </div>
+
+        <!-- <div class="mini">
+          <p class="secTitle">Research Focus</p>
+          <div class="chips">
+            <span class="chip">AI</span>
+            <span class="chip">Multimodal</span>
+            <span class="chip">VLM</span>
+            <span class="chip">VLA</span>
+            <span class="chip">Embodied AI</span>
+          </div>
+        </div> -->
+
+        <!-- <div class="mini">
+          <p class="secTitle">Skills</p>
+          <div class="chips">
+            <span class="chip">Python</span>
+            <span class="chip">PyTorch</span>
+            <span class="chip">Transformers</span>
+            <span class="chip">Linux</span>
+            <span class="chip">Git</span>
+          </div>
+        </div> -->
+
+        <!-- <div class="mini">
+          <p class="secTitle">Languages</p>
+          <div class="chips">
+            <span class="chip">Chinese (Native)</span>
+            <span class="chip">English</span>
+          </div>
+        </div> -->
+      </aside>
+
+      <!-- RIGHT (wide) -->
+      <section class="panel right">
+        <div class="headerRow">
+          <!-- <div class="titleBlock">
+            <h1>Resume</h1>
+            <p>AI & Multimodal · Open to research collaboration</p>
+          </div> -->
+          <div class="btns">
+            <a class="btn" href="#education">Education</a>
+            <a class="btn" href="#internships">Internships</a>
+            <a class="btn" href="#awards">Awards</a>
+            <!-- <a class="btn" href="#projects">Projects</a> -->
+          </div>
+        </div>
+
+        <!-- <div class="section" id="summary">
+          <h2>Profile</h2>
+          <div class="item">
+            <p style="margin:0">
+              我关注 <strong>AI 与多模态学习</strong>，尤其是 VLM/VLA 与具身智能。
+              具备研究与工业实习经历（Caterpillar / SenseTime / Shanghai AI Lab），欢迎交流合作机会。
+            </p>
+          </div>
+        </div> -->
+
+        <div class="section" id="education">
+          <h2>Education</h2>
+
+          <div class="item">
+            <div class="row">
+              <p class="roleTitle">The Hong Kong Polytechnic University (PolyU) · Ph.D. student</p>
+              <div class="meta">Hong Kong · 2026 Fall </div>
+            </div>
+            <p class="desc">Department of Computing</p>
+            <p class="desc">Supervisor: Xiao HUANG</p>
+          </div>
+
+          <div class="item">
+            <div class="row">
+              <p class="roleTitle">Shanghai Jiao Tong University (SJTU) · B.Eng.</p>
+              <div class="meta">Shanghai · 2022 - 2026</div>
+            </div>
+            <p class="desc">Global College (GC)</p>
+            <p class="desc">Major in Electrical and Computer Engineering (ECE)</p>
+            <p class="desc">Minor in Computer Science (CS), Data Science (DS)</p>
+            <!-- <ul>
+              <li>(可选) Relevant coursework: ML / DL / CV / Optimization …</li>
+            </ul> -->
+          </div>
+        </div>
+
+        <div class="section" id="internships">
+          <h2>Internships</h2>
+
+          <div class="item">
+            <div class="row">
+              <p class="roleTitle">Shanghai AI Lab · Research Intern</p>
+              <div class="meta">Shanghai · (2026.2 - present)</div>
+            </div>
+            <p class="desc">AI research</p>
+            <!-- <ul>
+              <li>Replace with your real highlight (action verb + method + result).</li>
+              <li>Replace with your real highlight (quantify if possible).</li>
+            </ul> -->
+          </div>
+
+          <div class="item">
+            <div class="row">
+              <p class="roleTitle">SenseTime · Intern</p>
+              <div class="meta">Shanghai · (2025.11 - 2026.1)</div>
+            </div>
+            <p class="desc">Vision-Language Models (VLM) & Vision-Language-Action (VLA)</p>
+            <!-- <ul>
+              <li>Replace with concrete contribution (e.g., training, evaluation, data, infra).</li>
+              <li>Replace with result/impact (e.g., improved metric, speed, stability).</li>
+            </ul> -->
+          </div>
+
+          <div class="item">
+            <div class="row">
+              <p class="roleTitle">Caterpillar · Intern</p>
+              <div class="meta">Shanghai · (2025.7 - 2025.11)</div>
+            </div>
+            <p class="desc">Industrial CV / Deep Learning</p>
+            <!-- <ul>
+              <li>Replace with your project details (task + model + deployment/validation).</li>
+              <li>Replace with result/impact (quantified if possible).</li>
+            </ul> -->
+          </div>
+        </div>
+
+        <div class="section" id="awards">
+          <h2>Awards & Honors</h2>
+          <div class="item">
+            <ul style="margin:0; padding-left:18px">
+              <li><strong>YU LiMing scholarship</strong> — 2025</li>
+              <li><strong>SJTU excellence scholarship</strong> — 2024 & 2025</li>
+              <li><strong>University Physics Competition (UPC) – Gold Award</strong> — 2025</li>
+              <li><strong>Mathematical Contest in Modeling (MCM) - Meritorious Winner</strong> — 2024</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- <div class="section" id="projects">
+          <h2>Selected Projects</h2>
+          <div class="twoColGrid">
+            <div class="item">
+              <div class="row">
+                <p class="roleTitle">Project Title 1</p>
+                <div class="meta">(Year)</div>
+              </div>
+              <p class="desc">One-line description of what it is and why it matters.</p>
+              <ul>
+                <li>Key contribution / result.</li>
+              </ul>
+              <p class="desc" style="margin-top:10px">
+                <span class="mono"><a href="https://github.com/USERNAME/PROJECT1" target="_blank" rel="noreferrer">Code</a></span>
+                · <span class="mono"><a href="#" target="_blank" rel="noreferrer">Paper/Demo</a></span>
+              </p>
+            </div>
+
+            <div class="item">
+              <div class="row">
+                <p class="roleTitle">Project Title 2</p>
+                <div class="meta">(Year)</div>
+              </div>
+              <p class="desc">One-line description of what it is and why it matters.</p>
+              <ul>
+                <li>Key contribution / result.</li>
+              </ul>
+              <p class="desc" style="margin-top:10px">
+                <span class="mono"><a href="https://github.com/USERNAME/PROJECT2" target="_blank" rel="noreferrer">Code</a></span>
+                · <span class="mono"><a href="#" target="_blank" rel="noreferrer">Paper/Demo</a></span>
+              </p>
+            </div>
+          </div>
+        </div> -->
+
+        <!-- <div class="section" id="publications">
+          <h2>Publications (Optional)</h2>
+          <div class="item">
+            <ul style="margin:0; padding-left:18px">
+              <li>Author, Author, <strong>Title</strong>, Venue, Year. <a href="#">[PDF]</a></li>
+              <li>Author, <strong>Title</strong>, arXiv, Year. <a href="#">[arXiv]</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>Notes</h2>
+          <div class="item">
+            <p style="margin:0;color:var(--muted)">
+              Tip：把每段实习 bullet 写成「动词开头 + 技术/方法 + 量化结果/影响」，简历质感会立刻上来。
+            </p>
+          </div>
+        </div> -->
+
+        <footer style="margin-top:18px;color:var(--muted);font-size:13px">
+          © <span id="y"></span> Zhicong Hong
+        </footer>
+      </section>
+
+    </div>
+  </main>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
