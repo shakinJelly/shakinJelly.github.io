@@ -1,410 +1,166 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Zhicong Hong · CV</title>
-  <meta name="description" content="Two-column resume-style personal homepage." />
+  <meta name="color-scheme" content="light" />
+  <meta name="theme-color" content="#ffffff" />
+  <title>Zhicong Hong | Academic Profile</title>
+  <meta name="description" content="Zhicong Hong's academic profile, including education, internships, and achievements." />
+  <link rel="canonical" href="https://shakinjelly.github.io/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://shakinjelly.github.io/" />
+  <meta property="og:title" content="Zhicong Hong | Academic Profile" />
+  <meta property="og:description" content="Education, internships, and achievements of Zhicong Hong." />
+  <meta property="og:locale" content="en_US" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Zhicong Hong | Academic Profile" />
+  <meta name="twitter:description" content="Education, internships, and achievements of Zhicong Hong." />
+  <link rel="stylesheet" href="assets/github-markdown-light.css" />
   <style>
-    /* =========================
-       Black & Gold (Minimal)
-       ========================= */
-    :root{
-      /* Light (paper + gold) */
-      --bg:#fbfaf7;
-      --text:#111827;
-      --muted:#6b7280;
-      --line:#e7e3da;
-      --card:#ffffff;
-      --chip:#f4f1ea;
-      --shadow: 0 1px 0 rgba(17,24,39,.06);
-
-      /* Accent (gold) */
-      --gold:#b08d57;
-      --gold2:#d6b06e;
+    /* Layout only. The profile content uses the unmodified GitHub Markdown stylesheet. */
+    * { box-sizing: border-box; }
+    html { scroll-padding-top: 24px; }
+    body { margin: 0; color: #1f2328; background: #fff; font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    a { color: #0969da; text-underline-offset: 3px; }
+    a:focus-visible, table:focus-visible { outline: 2px solid #0969da; outline-offset: 4px; }
+    .skip-link { position: fixed; top: 12px; left: 16px; z-index: 1; padding: 8px 12px; background: #1f2328; color: #fff; transform: translateY(-200%); }
+    .skip-link:focus { transform: translateY(0); }
+    .page-shell { width: min(1240px, calc(100% - 64px)); margin-inline: auto; display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 48px; align-items: start; }
+    .profile-sidebar { position: sticky; top: 0; height: 100vh; height: 100dvh; overflow-y: auto; scroll-padding-block: 12px; scrollbar-width: thin; padding: 40px 12px 24px 4px; }
+    .profile-sidebar a { scroll-margin-block: 8px; }
+    .portrait { width: 156px; margin: 0 0 20px; }
+    .portrait img { display: block; width: 100%; height: auto; border: 1px solid #d1d9e0; border-radius: 6px; }
+    .profile-sidebar h1 { margin: 0; font-size: 26px; line-height: 1.3; font-weight: 600; }
+    .profile-handle { margin: 4px 0 0; color: #59636e; font-size: 16px; }
+    .contact-links { margin-top: 22px; }
+    .contact-links a { display: block; width: fit-content; max-width: 100%; padding-block: 8px; font-size: 12px; overflow-wrap: anywhere; }
+    .section-nav { display: grid; gap: 2px; margin-top: 20px; }
+    .section-nav a { display: block; width: fit-content; padding-block: 8px; text-decoration: none; }
+    .section-nav a:hover { text-decoration: underline; }
+    .main-content { min-width: 0; padding: 40px 0 32px; }
+    .main-content section { scroll-margin-top: 24px; }
+    .site-footer { margin-top: 32px; color: #59636e; font-size: 12px; }
+    @media (max-width: 900px) {
+      .page-shell { display: block; width: calc(100% - 40px); }
+      .profile-sidebar { position: static; height: auto; overflow: visible; padding: 28px 0 0; }
+      .profile-intro { display: flex; gap: 20px; align-items: center; }
+      .portrait { width: 110px; margin: 0; flex: 0 0 auto; }
+      .contact-links { display: flex; flex-wrap: wrap; gap: 0 20px; margin-top: 16px; }
+      .section-nav { display: flex; flex-wrap: wrap; gap: 0 20px; margin-top: 8px; }
+      .main-content { padding-top: 24px; }
     }
-    @media (prefers-color-scheme: dark){
-      :root{
-        /* Dark (black + gold) */
-        --bg:#07080b;
-        --text:#f3f4f6;
-        --muted:#b7b0a6;
-        --line:#23201c;
-        --card:#0c0d12;
-        --chip:#12131a;
-        --shadow: 0 1px 0 rgba(255,255,255,.04);
-
-        /* Accent (gold) */
-        --gold:#c7a46b;
-        --gold2:#e2c27c;
-      }
+    @media (max-width: 400px) {
+      .page-shell { width: calc(100% - 32px); }
+      .portrait { width: 90px; }
+      .profile-intro { gap: 15px; }
+      .profile-sidebar h1 { font-size: 23px; }
+      .profile-handle { font-size: 14px; }
+      .section-nav { gap: 0 16px; font-size: 13px; }
     }
-
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      background:var(--bg);
-      color:var(--text);
-      font: 15px/1.6 ui-rounded, "SF Pro Rounded", "Segoe UI Rounded", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      letter-spacing:.1px;
-    }
-
-    /* Links (gold accent) */
-    a{color:var(--gold); text-decoration:none; border-bottom:1px solid transparent}
-    a:hover{border-bottom-color:var(--gold2)}
-
-    .wrap{max-width:1060px; margin:0 auto; padding:44px 20px 70px}
-    .layout{
-      display:grid;
-      grid-template-columns: 300px 1fr; /* 左窄右宽 */
-      gap:18px;
-      align-items:start;
-    }
-    @media (max-width: 920px){
-      .layout{grid-template-columns:1fr}
-    }
-    .panel{
-      background:var(--card);
-      border:1px solid var(--line);
-      border-radius:16px;
-      box-shadow:var(--shadow);
-    }
-    .left{position:sticky; top:18px; padding:18px}
-    @media (max-width: 920px){ .left{position:static} }
-    .right{padding:18px}
-
-    /* Left column */
-    .avatar{
-      width:140px; height:140px;
-      border-radius:0;
-      border:0;
-      object-fit:contain;
-      background:transparent;
-      box-shadow:none;
-    }
-    .name{margin:14px 0 6px; font-size:26px; line-height:1.2}
-    .sub{margin:0; color:var(--muted)}
-    .mini{
-      margin-top:12px;
-      padding-top:12px;
-      border-top:1px solid var(--line);
-    }
-    .secTitle{
-      font-size:12px;
-      letter-spacing:.16em;
-      text-transform:uppercase;
-      color:var(--muted);
-      margin:0 0 10px;
-    }
-    .kv{display:grid; gap:8px}
-    .kv div{display:flex; gap:10px; align-items:baseline; min-width:0}
-    .k{width:64px; color:var(--muted); font-size:12px; flex:0 0 auto}
-    .v{min-width:0; overflow:hidden; text-overflow:ellipsis; color:var(--text)}
-    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}
-    .chips{display:flex; gap:8px; flex-wrap:wrap}
-    .chip{
-      font-size:12px;
-      padding:4px 10px;
-      border-radius:999px;
-      background:var(--chip);
-      border:1px solid color-mix(in srgb, var(--gold) 25%, var(--line));
-      color:var(--muted);
-    }
-
-    /* Right column */
-    .headerRow{
-      display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
-      padding-bottom:14px;
-      border-bottom:1px solid var(--line);
-      margin-bottom:16px;
-    }
-    .titleBlock h1{margin:0; font-size:24px}
-    .titleBlock p{margin:6px 0 0; color:var(--muted)}
-    .btns{display:flex; gap:10px; flex-wrap:wrap; align-items:flex-start}
-    .btn{
-      display:inline-flex; align-items:center; gap:8px;
-      font-size:13px;
-      padding:8px 12px;
-      border-radius:12px;
-      background:var(--card);
-      border:1px solid var(--line);
-      box-shadow:var(--shadow);
-      color:var(--text);
-      white-space:nowrap;
-    }
-    .btn:hover{
-      transform:translateY(-1px);
-      border-color:var(--gold);
-    }
-
-    .section{margin-top:18px}
-    .section h2{
-      margin:0 0 10px;
-      font-size:12px;
-      letter-spacing:.16em;
-      text-transform:uppercase;
-      color:var(--muted);
-    }
-    .item{
-      padding:12px 14px;
-      border:1px solid var(--line);
-      border-radius:14px;
-      background:var(--bg);
-      box-shadow:var(--shadow);
-      margin-bottom:12px;
-    }
-    .item:last-child{margin-bottom:0}
-    .row{
-      display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
-      align-items:baseline;
-    }
-    .roleTitle{margin:0; font-weight:750; color:var(--text)}
-    .meta{color:var(--muted); font-size:13px; white-space:nowrap}
-    .desc{margin:4px 0 0; color:var(--muted)}
-    ul{margin:10px 0 0; padding-left:18px}
-    li{margin:4px 0}
-    .twoColGrid{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:12px;
-    }
-    @media (max-width: 920px){ .twoColGrid{grid-template-columns:1fr} }
-
-    /* Print-friendly */
-    @media print{
-      :root{ --bg:#fff; --text:#000; --muted:#333; --line:#ddd; --chip:#f3f3f3; --card:#fff; --shadow:none; --gold:#000; --gold2:#000; }
-      body{background:#fff}
-      .wrap{padding:18px}
-      .left{position:static}
-      .btn{display:none}
-      a{border-bottom:0; color:#000}
-      .item{break-inside:avoid}
+    @media print {
+      .page-shell { display: block; width: 100%; }
+      .profile-sidebar { position: static; height: auto; overflow: visible; padding-top: 0; }
+      .profile-intro { display: flex; align-items: center; gap: 20px; }
+      .portrait { width: 90px; margin: 0; }
+      .contact-links { display: flex; gap: 24px; }
+      .section-nav, .skip-link { display: none; }
+      .main-content { padding-top: 12px; }
     }
   </style>
 </head>
-
-<body>
-  <main class="wrap">
-    <div class="layout">
-
-      <!-- LEFT (narrow) -->
-      <aside class="panel left">
-        <!-- 头像：放到 assets/avatar.jpg 或改成在线链接 -->
-        <img class="avatar" src="photo.jpg" alt="avatar" />
-
-        <h1 class="name">Zhicong HONG</h1>
-        <!-- <p class="sub">洪智聪</p> -->
-        <!-- <p class="sub">B.Eng. ECE @ SJTU (2026) · PhD student @ PolyU (Computing, 2026 Fall)</p> -->
-
-        <div class="mini">
-          <p class="secTitle">Contact</p>
-          <div class="kv">
-            <div><span class="k">Email</span><span class="v mono"><a href="mailto:arrow23@sjtu.edu.cn">arrow23@sjtu.edu.cn</a></span></div>
-            <div><span class="k">GitHub</span><span class="v mono"><a href="https://github.com/shakinJelly" target="_blank" rel="noreferrer">github.com/shakinJelly</a></span></div>
-            <!-- <div><span class="k">Scholar</span><span class="v mono"><a href="https://scholar.google.com/" target="_blank" rel="noreferrer">Google Scholar</a></span></div>
-            <div><span class="k">CV</span><span class="v mono"><a href="assets/CV.pdf" target="_blank" rel="noreferrer">assets/CV.pdf</a></span></div> -->
-            <div><span class="k">Location</span><span class="v">Shanghai / Hong Kong</span></div>
-          </div>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page-shell">
+    <aside class="profile-sidebar" aria-label="Personal information">
+      <div class="profile-intro">
+        <figure class="portrait">
+          <img src="photo.jpg" width="1950" height="2438" alt="Portrait of Zhicong Hong" fetchpriority="high" />
+        </figure>
+        <div>
+          <h1>Zhicong Hong</h1>
+          <p class="profile-handle">shakinJelly</p>
         </div>
+      </div>
+      <div class="contact-links">
+        <a class="email-link" href="mailto:zhicong.hong@connect.polyu.hk">zhicong.hong@connect.polyu.hk</a>
+        <a href="https://github.com/shakinJelly" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile (opens in a new tab)">GitHub</a>
+      </div>
+      <nav class="section-nav" aria-label="Main navigation">
+        <a href="#education">Education</a>
+        <a href="#internships">Work experience</a>
+        <a href="#awards">Achievements</a>
+      </nav>
+    </aside>
 
-        <!-- <div class="mini">
-          <p class="secTitle">Research Focus</p>
-          <div class="chips">
-            <span class="chip">AI</span>
-            <span class="chip">Multimodal</span>
-            <span class="chip">VLM</span>
-            <span class="chip">VLA</span>
-            <span class="chip">Embodied AI</span>
-          </div>
-        </div> -->
-
-        <!-- <div class="mini">
-          <p class="secTitle">Skills</p>
-          <div class="chips">
-            <span class="chip">Python</span>
-            <span class="chip">PyTorch</span>
-            <span class="chip">Transformers</span>
-            <span class="chip">Linux</span>
-            <span class="chip">Git</span>
-          </div>
-        </div> -->
-
-        <!-- <div class="mini">
-          <p class="secTitle">Languages</p>
-          <div class="chips">
-            <span class="chip">Chinese (Native)</span>
-            <span class="chip">English</span>
-          </div>
-        </div> -->
-      </aside>
-
-      <!-- RIGHT (wide) -->
-      <section class="panel right">
-        <div class="headerRow">
-          <!-- <div class="titleBlock">
-            <h1>Resume</h1>
-            <p>AI & Multimodal · Open to research collaboration</p>
-          </div> -->
-          <div class="btns">
-            <a class="btn" href="#education">Education</a>
-            <a class="btn" href="#internships">Internships</a>
-            <a class="btn" href="#awards">Awards</a>
-            <!-- <a class="btn" href="#projects">Projects</a> -->
-          </div>
-        </div>
-
-        <!-- <div class="section" id="summary">
-          <h2>Profile</h2>
-          <div class="item">
-            <p style="margin:0">
-              我关注 <strong>AI 与多模态学习</strong>，尤其是 VLM/VLA 与具身智能。
-              具备研究与工业实习经历（Caterpillar / SenseTime / Shanghai AI Lab），欢迎交流合作机会。
-            </p>
-          </div>
-        </div> -->
-
-        <div class="section" id="education">
-          <h2>Education</h2>
-
-          <div class="item">
-            <div class="row">
-              <p class="roleTitle">The Hong Kong Polytechnic University (PolyU) · Ph.D. student</p>
-              <div class="meta">Hong Kong · 2026 Fall </div>
-            </div>
-            <p class="desc">Department of Computing</p>
-            <p class="desc">Supervisor: Xiao HUANG</p>
-          </div>
-
-          <div class="item">
-            <div class="row">
-              <p class="roleTitle">Shanghai Jiao Tong University (SJTU) · B.Eng.</p>
-              <div class="meta">Shanghai · 2022 - 2026</div>
-            </div>
-            <p class="desc">Global College (GC)</p>
-            <p class="desc">Major in Electrical and Computer Engineering (ECE)</p>
-            <p class="desc">Minor in Computer Science (CS), Data Science (DS)</p>
-            <!-- <ul>
-              <li>(可选) Relevant coursework: ML / DL / CV / Optimization …</li>
-            </ul> -->
-          </div>
-        </div>
-
-        <div class="section" id="internships">
-          <h2>Internships</h2>
-
-          <div class="item">
-            <div class="row">
-              <p class="roleTitle">Shanghai AI Lab · Research Intern</p>
-              <div class="meta">Shanghai · (2026.2 - present)</div>
-            </div>
-            <p class="desc">AI research</p>
-            <!-- <ul>
-              <li>Replace with your real highlight (action verb + method + result).</li>
-              <li>Replace with your real highlight (quantify if possible).</li>
-            </ul> -->
-          </div>
-
-          <div class="item">
-            <div class="row">
-              <p class="roleTitle">SenseTime · Intern</p>
-              <div class="meta">Shanghai · (2025.11 - 2026.1)</div>
-            </div>
-            <p class="desc">Vision-Language Models (VLM) & Vision-Language-Action (VLA)</p>
-            <!-- <ul>
-              <li>Replace with concrete contribution (e.g., training, evaluation, data, infra).</li>
-              <li>Replace with result/impact (e.g., improved metric, speed, stability).</li>
-            </ul> -->
-          </div>
-
-          <div class="item">
-            <div class="row">
-              <p class="roleTitle">Caterpillar · Intern</p>
-              <div class="meta">Shanghai · (2025.7 - 2025.11)</div>
-            </div>
-            <p class="desc">Industrial CV / Deep Learning</p>
-            <!-- <ul>
-              <li>Replace with your project details (task + model + deployment/validation).</li>
-              <li>Replace with result/impact (quantified if possible).</li>
-            </ul> -->
-          </div>
-        </div>
-
-        <div class="section" id="awards">
-          <h2>Awards & Honors</h2>
-          <div class="item">
-            <ul style="margin:0; padding-left:18px">
-              <li><strong>YU LiMing scholarship</strong> — 2025</li>
-              <li><strong>SJTU excellence scholarship</strong> — 2024 & 2025</li>
-              <li><strong>University Physics Competition (UPC) – Gold Award</strong> — 2025</li>
-              <li><strong>Mathematical Contest in Modeling (MCM) - Meritorious Winner</strong> — 2024</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- <div class="section" id="projects">
-          <h2>Selected Projects</h2>
-          <div class="twoColGrid">
-            <div class="item">
-              <div class="row">
-                <p class="roleTitle">Project Title 1</p>
-                <div class="meta">(Year)</div>
-              </div>
-              <p class="desc">One-line description of what it is and why it matters.</p>
-              <ul>
-                <li>Key contribution / result.</li>
-              </ul>
-              <p class="desc" style="margin-top:10px">
-                <span class="mono"><a href="https://github.com/USERNAME/PROJECT1" target="_blank" rel="noreferrer">Code</a></span>
-                · <span class="mono"><a href="#" target="_blank" rel="noreferrer">Paper/Demo</a></span>
-              </p>
-            </div>
-
-            <div class="item">
-              <div class="row">
-                <p class="roleTitle">Project Title 2</p>
-                <div class="meta">(Year)</div>
-              </div>
-              <p class="desc">One-line description of what it is and why it matters.</p>
-              <ul>
-                <li>Key contribution / result.</li>
-              </ul>
-              <p class="desc" style="margin-top:10px">
-                <span class="mono"><a href="https://github.com/USERNAME/PROJECT2" target="_blank" rel="noreferrer">Code</a></span>
-                · <span class="mono"><a href="#" target="_blank" rel="noreferrer">Paper/Demo</a></span>
-              </p>
-            </div>
-          </div>
-        </div> -->
-
-        <!-- <div class="section" id="publications">
-          <h2>Publications (Optional)</h2>
-          <div class="item">
-            <ul style="margin:0; padding-left:18px">
-              <li>Author, Author, <strong>Title</strong>, Venue, Year. <a href="#">[PDF]</a></li>
-              <li>Author, <strong>Title</strong>, arXiv, Year. <a href="#">[arXiv]</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="section">
-          <h2>Notes</h2>
-          <div class="item">
-            <p style="margin:0;color:var(--muted)">
-              Tip：把每段实习 bullet 写成「动词开头 + 技术/方法 + 量化结果/影响」，简历质感会立刻上来。
-            </p>
-          </div>
-        </div> -->
-
-        <footer style="margin-top:18px;color:var(--muted);font-size:13px">
-          © <span id="y"></span> Zhicong Hong
-        </footer>
+    <main id="main" class="main-content markdown-body" tabindex="-1">
+      <!-- dayyass README template, with education placed before work experience. -->
+      <section id="about" aria-labelledby="about-title">
+        <span id="research" aria-hidden="true"></span>
+        <h2 id="about-title">Hi, my name is Zhicong <span aria-hidden="true">👋</span></h2>
       </section>
 
-    </div>
-  </main>
+      <section id="education" aria-labelledby="education-title">
+        <h3 id="education-title">Education <span aria-hidden="true">🎓</span></h3>
+        <ul>
+          <li>
+            <p><strong>Ph.D. student @ The Hong Kong Polytechnic University</strong> (<time datetime="2026">2026</time>–Present, Hong Kong)<br />
+            Department of Computing. Supervised by Xiao Huang; research focuses on Data Agents.</p>
+          </li>
+          <li>
+            <p><strong>B.Eng. @ Shanghai Jiao Tong University</strong> (<time datetime="2022">2022</time>–<time datetime="2026">2026</time>, Shanghai)<br />
+            Global College. Major in Electrical and Computer Engineering (ECE), with a minor in Computer Science (CS).</p>
+          </li>
+        </ul>
+      </section>
 
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
+      <section id="internships" aria-labelledby="experience-title">
+        <h3 id="experience-title">Work experience <span aria-hidden="true">👔</span></h3>
+        <table tabindex="0" aria-label="Internship experience">
+          <thead>
+            <tr>
+              <th scope="col">Job Position</th>
+              <th scope="col">Company</th>
+              <th scope="col">Field</th>
+              <th scope="col">Work Period</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Research Intern</td>
+              <th scope="row">Shanghai AI Lab<br />Shanghai</th>
+              <td>Pretraining Energy-Based Language Models</td>
+              <td><time datetime="2026">2026</time></td>
+            </tr>
+            <tr>
+              <td>Intern</td>
+              <th scope="row">SenseTime<br />Shanghai</th>
+              <td>Vision-Language Models (VLM) and Vision-Language-Action (VLA)</td>
+              <td><time datetime="2025-11">Nov 2025</time> – <time datetime="2026-01">Jan 2026</time></td>
+            </tr>
+            <tr>
+              <td>Intern</td>
+              <th scope="row">Caterpillar<br />Shanghai</th>
+              <td>Industrial computer vision and deep learning</td>
+              <td><time datetime="2025-07">Jul 2025</time> – <time datetime="2025-11">Nov 2025</time></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="awards" aria-labelledby="honors-title">
+        <h3 id="honors-title">Achievements <span aria-hidden="true">🏆</span></h3>
+        <ul>
+          <li><strong>Outstanding Graduate, Shanghai Jiao Tong University</strong> — Class of 2026</li>
+          <li><strong>YU LiMing Scholarship</strong> — 2025</li>
+          <li><strong>SJTU Excellence Scholarship</strong> — 2024 &amp; 2025</li>
+          <li><strong>University Physics Competition (UPC) — Gold Award</strong> — 2025</li>
+          <li><strong>Mathematical Contest in Modeling (MCM) — Meritorious Winner</strong> — 2024</li>
+        </ul>
+      </section>
+
+      <footer class="site-footer">© 2026 Zhicong Hong</footer>
+    </main>
+  </div>
 </body>
 </html>
