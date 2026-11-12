@@ -10,6 +10,7 @@ The page follows [Dani El-Ayyass's README template](https://github.com/dayyass/d
 2. **Education**: one list item per university, placed before work experience.
 3. **Work experience**: the original four-column structure, `Job Position | Company | Field | Work Period`.
 4. **Achievements**: a plain list.
+5. **Academic service**: conference committee roles.
 
 The previously requested fixed personal sidebar is retained. The content uses an unmodified copy of [github-markdown-css](https://github.com/sindresorhus/github-markdown-css) for standard GitHub Markdown rendering. There are no custom document frames, badges, research tags, or animations.
 
@@ -20,6 +21,7 @@ Sections from the example that have no corresponding personal information are om
 - School information belongs in **Education**. Each university's degree, dates, department, supervisor, and research are kept together in its own entry.
 - Internship information belongs in **Work experience**. Each employer's role, location, dates, and tasks appear in a single table row.
 - Awards appear only in **Achievements**.
+- Conference committee roles appear in **Academic service**.
 - The personal sidebar contains the portrait, name, GitHub handle, contact links, and section navigation.
 - Avoid repeating institution-specific research in the greeting or a separate research summary.
 - The contact email is `zhicong.hong@connect.polyu.hk`.
